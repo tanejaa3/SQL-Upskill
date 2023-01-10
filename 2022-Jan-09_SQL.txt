@@ -1,0 +1,44 @@
+create DATABASE sample
+
+use sample;
+
+create DATABASE sample_2;
+
+show DATABASES;
+
+use sample;
+
+Create table if not exists employee
+(
+    id int,
+    name VARCHAR(50)
+);
+
+show tables;
+
+use sample_2;
+
+Create table if not exists employee
+(
+    id int,
+    name VARCHAR(50),
+    salary DOUBLE,
+    hiring_date DATE
+);
+
+create table if not exists sample_tb
+(
+    id int,
+    email varchar(10)
+
+);
+
+drop table if exists sample_tb;
+
+insert into employee values(1,'Shashank',1000,'2021-09-15'),
+(2,'Rahul',NULL,'2021-09-15'),
+(3,'Amit',3000,'2021-09-15'),
+(4,'Niting',3500,'2021-09-16'),
+(5,'Kajal',4000,'2021-09-20');
+
+select * from employee;
