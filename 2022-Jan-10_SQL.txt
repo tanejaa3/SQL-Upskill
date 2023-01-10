@@ -1,0 +1,36 @@
+use sample;
+
+drop DATABASE sample_2;
+
+create table if not exists employee(
+    id int,
+    name VARCHAR(50),
+    age int,
+    hiring_date date,
+    salary int,
+    city varchar(50)
+);
+
+insert into employee values(1,'Shashank', 24, '2021-08-10', 10000, 'Lucknow');
+
+insert into employee values(2,'Rahul', 25, '2021-08-10', 20000, 'Khajuraho');
+
+insert into employee values(3,'Sunny', 22, '2021-08-11', 11000, 'Banaglore');
+
+insert into employee values(5,'Amit', 25, '2021-08-11', 12000, 'Noida');
+
+SELECT * FROM employee;
+
+insert into employee values(6,'Puneet', 26, '2021-08-12', 50000, 'Gurgaon');
+
+SELECT id,name,salary as old_salary, (salary * 1.2 ) as new_salary from employee;
+
+UPDATE employee
+set salary = 1.2 * salary;
+
+select * from employee;
+
+select * from employee where salary = 
+(select max(salary) from employee);
+
+select * from employee order by salary desc LIMIT 1;
